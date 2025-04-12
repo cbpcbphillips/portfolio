@@ -1,11 +1,11 @@
 import Navbar from '@/components/navbar'
 
-export default function Home() {
+export default function Resume() {
   return (
     <div>
       <Navbar />
       <h1>
-        Home
+        Resume
       </h1>
     </div>
   );
