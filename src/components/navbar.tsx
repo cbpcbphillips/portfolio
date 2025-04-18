@@ -16,10 +16,10 @@ export default function Navbar() {
   return (
     <header className="relative z-[999]">
       <motion.div
-        initial={{ y: -100, x: '-50%', opacity: 0 }}
-        animate={{ y: 0, x: '-50%', opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="fixed top-0 left-1/2 w-full h-[4.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[35rem] flex justify-center rounded-none sm:rounded-full border border-[var(--color-darker)] bg-[var(--color-darker)] dark:bg-[var(--color-lighter)] dark:border-[var(--color-lighter)] shadow-lg shadow-black/[0.03] backdrop-blur-md -translate-x-1/2"
+        className="w-full max-w-5xl mx-auto mt-6 h-[3.25rem] flex justify-center rounded-full border border-[var(--color-darker)] bg-[var(--color-darker)] dark:bg-[var(--color-lighter)] dark:border-[var(--color-lighter)] sm:w-[35rem] shadow-md shadow-black/[0.03] backdrop-blur-md"
       >
         <nav className="flex items-center justify-center w-full">
           <ul className="flex gap-6 px-4">

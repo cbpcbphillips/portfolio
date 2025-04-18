@@ -1,5 +1,8 @@
 import '../styles/globals.css'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
+import DarkModeToggle from '../components/DarkModeToggle'
+import ThemeProvider from '../components/ThemeProvider'
 
 export default function RootLayout({
   children,
@@ -7,10 +10,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body>
-        <Navbar />
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-lighter dark:bg-darker">
+        <ThemeProvider>
+          <DarkModeToggle />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
