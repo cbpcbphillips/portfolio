@@ -1,9 +1,99 @@
-import Navbar from '@/components/navbar'
+'use client'
 
-export default function Projects() {
+import React, { useState } from 'react'
+import ProjectCard from '@/components/ProjectCard'
+import { projects } from './projects'
+
+export default function ProjectsPage() {
+  // 1️⃣ Build lists for dropdowns
+  const categories = Array.from(
+    new Set(projects.flatMap((p) => p.tags ?? []))
+  ).sort()
+  const techs = Array.from(
+    new Set(projects.flatMap((p) => p.stack))
+  ).sort()
+
+  // prepend "All" option
+  const categoryOptions = ['All', ...categories]
+  const techOptions = ['All', ...techs]
+
+  // 2️⃣ State for selected filters
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [selectedTech, setSelectedTech] = useState('All')
+
+  // 3️⃣ Apply filters
+  const filtered = projects.filter((p) => {
+    const byCategory =
+      selectedCategory === 'All' ||
+      p.tags?.includes(selectedCategory)
+    const byTech =
+      selectedTech === 'All' ||
+      p.stack.includes(selectedTech)
+    return byCategory && byTech
+  })
+
   return (
-    <div>
-      <h1>Projects</h1>
-    </div>
+    <main className="max-w-5xl mx-auto px-4 py-16 space-y-8">
+      {/* Hero */}
+      <section className="text-center space-y-2">
+        <h1 className="text-4xl font-bold">Projects</h1>
+        <p className="text-lg text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
+          Filter by category or technology to quickly find projects.
+        </p>
+      </section>
+
+      {/* Facet Selectors */}
+      <div className="flex flex-wrap gap-6 justify-center">
+        {/* Category Dropdown */}
+        <div>
+          <label htmlFor="category" className="block text-sm font-medium mb-1">
+            Category
+          </label>
+          <select
+            id="category"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="block w-40 rounded border px-3 py-2 bg-[var(--color-lighter)] dark:bg-[var(--color-darker)] border-[var(--color-darker)] dark:border-[var(--color-lighter)]"
+          >
+            {categoryOptions.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Tech Stack Dropdown */}
+        <div>
+          <label htmlFor="tech" className="block text-sm font-medium mb-1">
+            Technology
+          </label>
+          <select
+            id="tech"
+            value={selectedTech}
+            onChange={(e) => setSelectedTech(e.target.value)}
+            className="block w-40 rounded border px-3 py-2 bg-[var(--color-lighter)] dark:bg-[var(--color-darker)] border-[var(--color-darker)] dark:border-[var(--color-lighter)]"
+          >
+            {techOptions.map((tech) => (
+              <option key={tech} value={tech}>
+                {tech}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {/* Filtered Project Grid */}
+      <section className="grid gap-6 sm:grid-cols-2">
+        {filtered.map((project) => (
+          <ProjectCard key={project.slug} {...project} />
+        ))}
+        {filtered.length === 0 && (
+          <p className="col-span-full text-center text-sm text-gray-500">
+            No projects match those filters.
+          </p>
+        )}
+      </section>
+    </main>
   )
 }

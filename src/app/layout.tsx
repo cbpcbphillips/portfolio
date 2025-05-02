@@ -10,8 +10,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-lighter dark:bg-darker">
+    <html lang="en" className="bg-lighter dark:bg-darker" suppressHydrationWarning>
+      <body>
         <ThemeProvider>
           <DarkModeToggle />
           <Navbar />

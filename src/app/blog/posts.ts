@@ -1,15 +1,8 @@
 export const blogPosts = [
   {
-    title: 'April 2025 Update',
-    summary: 'Earlier this month, I listened to LeBron James speak on a podcast about how he fell in love with the' +
-      ' process of basketball — from training and recovery to staying disciplined in his routine. That mindset really' +
-      ' resonated with me and inspired me to start taking my development journey more seriously.\n' +
-      '\n' +
-      'Since then, I’ve begun building structured routines to improve as a developer. I’ve started planning weekly' +
-      ' goals, breaking larger projects into smaller, manageable tasks, and tracking my progress using tools like' +
-      ' Notion. I’ve also committed to consistent practice — whether that’s debugging, learning a new tech stack, or' +
-      ' writing cleaner, more maintainable code. By falling in love with the process, I’m learning that growth isn’t' +
-      ' just about big wins — it’s about showing up and doing the work every day.',
+    slug: 'april-2025-update',
+    title: 'April 2025',
+    summary: "April was all about building momentum and laying a foundation. I spent the month dialing in a routine that fits around my full-time schedule, while making solid progress on my developer portfolio using Next.js. I learned the fundamentals of Node.js, built my first backend routes, and gained a clearer understanding of fullstack project structure. I also started growing my LeetCode GitHub repo and committed to daily problem-solving. It wasn’t the flashiest month, but it was productive, consistent, and exactly what I needed to move forward.",
     date: 'April 18, 2025',
   },
 ]
