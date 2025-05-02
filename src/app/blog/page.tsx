@@ -13,7 +13,7 @@ export default function BlogPage() {
         </p>
       </section>
 
-      <section className="grid gap-6">
+      <section className="grid gap-6 sm:grid-cols-2">
         {blogPosts.map((post) => (
           <BlogPostCard key={post.slug} {...post} />
         ))}

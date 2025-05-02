@@ -7,7 +7,6 @@ import Link from 'next/link'
 export default function ResumePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16 space-y-16 text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
-
       {/* Download Button */}
       <div className="text-center">
         <Link
@@ -23,9 +22,11 @@ export default function ResumePage() {
       <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Professional Summary</h2>
         <p>
-          I'm a student at Texas A&M University pursuing a career in full stack web development.
-          I specialize in React, Node.js, and PostgreSQL, and enjoy creating clean, scalable applications that solve real-world problems.
-          I thrive in collaborative environments, embrace continuous learning, and aim to deliver meaningful and user-focused solutions.
+          I&apos;m a student at Texas A&amp;M University pursuing a career in full stack
+          web development. I specialize in React, Node.js, and PostgreSQL, and
+          enjoy creating clean, scalable applications that solve real-world
+          problems. I thrive in collaborative environments, embrace continuous
+          learning, and aim to deliver meaningful and user-focused solutions.
         </p>
       </section>
 
@@ -94,9 +95,12 @@ export default function ResumePage() {
       <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Education</h2>
         <p>
-          <strong>Texas A&M University</strong><br />
-          B.A. in Computing, Expected Graduation: May 2027<br />
-          Relevant Coursework: Data Structures, Algorithms, Web Development, Databases
+          <strong>Texas A&amp;M University</strong>
+          <br />
+          B.A. in Computing, Expected Graduation: May 2027
+          <br />
+          Relevant Coursework: Data Structures, Algorithms, Web Development,
+          Databases
         </p>
       </section>
 
@@ -104,33 +108,55 @@ export default function ResumePage() {
       <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Experience</h2>
         <p>
-          <strong>Student Technician</strong> — Texas A&M Transportation Institute<br />
+          <strong>Student Technician</strong> — Texas A&amp;M Transportation
+          Institute
+          <br />
           March 2024 – Present
         </p>
         <p>
-          Provide technical support as part of the helpdesk team, assisting users with hardware, software, and connectivity issues. Manage and maintain institutional devices using Microsoft Intune and SCCM, ensuring compliance and smooth operations. Supported audit preparation by reconciling inventory and resolving sync issues.
+          Provide technical support as part of the helpdesk team, assisting
+          users with hardware, software, and connectivity issues. Manage and
+          maintain institutional devices using Microsoft Intune and SCCM,
+          ensuring compliance and smooth operations. Supported audit preparation
+          by reconciling inventory and resolving sync issues.
         </p>
         <ul className="list-disc list-inside space-y-1">
-          <li>Supported audit readiness by reconciling SCCM and Intune data.</li>
-          <li>Managed device lifecycle tasks including enrollment, configuration, and retirement.</li>
+          <li>
+            Supported audit readiness by reconciling SCCM and Intune data.
+          </li>
+          <li>
+            Managed device lifecycle tasks including enrollment, configuration,
+            and retirement.
+          </li>
         </ul>
       </section>
 
       {/* Certifications & Achievements */}
       <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
-        <h2 className="text-2xl font-semibold">Certifications & Achievements</h2>
+        <h2 className="text-2xl font-semibold">
+          Certifications &amp; Achievements
+        </h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>Stellar Student Award, Texas A&M Transportation Institute (Q4 2025)</li>
-          <li>Participant, Toyota Hackathon – Built vehicle quiz recommender app</li>
-          <li>Active Member, Aggie Competitive Coding Club and Aggie Data Science Club</li>
+          <li>
+            Stellar Student Award, Texas A&amp;M Transportation Institute (Q4 2025)
+          </li>
+          <li>
+            Participant, Toyota Hackathon – Built vehicle quiz recommender app
+          </li>
+          <li>
+            Active Member, Aggie Competitive Coding Club and Aggie Data Science
+            Club
+          </li>
         </ul>
       </section>
 
       {/* Call to Action */}
       <section className="text-center space-y-2">
-        <h2 className="text-xl font-semibold">Let’s Connect</h2>
+        <h2 className="text-xl font-semibold">Let&apos;s Connect</h2>
         <p>
-          Interested in working together or want to learn more? Reach out through the contact info in the footer or drop feedback through the form.
+          Interested in working together or want to learn more? Reach out
+          through the contact info in the footer or drop feedback through the
+          form.
         </p>
       </section>
     </main>

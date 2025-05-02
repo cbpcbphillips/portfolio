@@ -9,7 +9,12 @@ interface BlogPostCardProps {
   date: string
 }
 
-export default function BlogPostCard({ slug, title, summary, date }: BlogPostCardProps) {
+export default function BlogPostCard({
+  slug,
+  title,
+  summary,
+  date,
+}: BlogPostCardProps) {
   return (
     <Link
       href={`/blog/${slug}`}

@@ -6,11 +6,19 @@ interface ProjectItemProps {
   link: string
 }
 
-export default function ProjectItem({ title, description, link }: ProjectItemProps) {
+export default function ProjectItem({
+  title,
+  description,
+  link,
+}: ProjectItemProps) {
   return (
     <li>
       <h3 className="text-lg font-semibold">
-        <a href={link} target="_blank" className="underline hover:text-[var(--color-primary)] transition">
+        <a
+          href={link}
+          target="_blank"
+          className="underline hover:text-[var(--color-primary)] transition"
+        >
           {title}
         </a>
       </h3>

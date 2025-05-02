@@ -2,15 +2,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-lighter: #F7F7F7;
-  --color-hlighter: #C7C7C7;
+  --color-lighter: #f7f7f7;
+  --color-hlighter: #c7c7c7;
   --color-darker: #272727;
   --color-hdarker: #373737;
-  --color-primary: #A8180D;
-  --color-secondary: #C79900;
-  --color-accent: #48704E;
+  --color-primary: #a8180d;
+  --color-secondary: #c79900;
+  --color-accent: #48704e;
 }
 
 html {
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
