@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="978cadfe-39b5-47c2-961e-d4b56dddd96a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/blog/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/posts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/projects/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/projects/projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/projects/projects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/resume/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/resume/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogPostCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogPostCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DarkModeToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DarkModeToggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SkillCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SkillCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ThemeProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ThemeProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
-    </list>
+    <list default="true" id="978cadfe-39b5-47c2-961e-d4b56dddd96a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +94,7 @@
       <workItem from="1744587940240" duration="2159000" />
       <workItem from="1744760862502" duration="14642000" />
       <workItem from="1745271294285" duration="10484000" />
-      <workItem from="1746027071335" duration="6377000" />
+      <workItem from="1746027071335" duration="6829000" />
     </task>
     <servers />
   </component>
