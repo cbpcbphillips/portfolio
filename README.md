@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Developer Portfolio – Carson Phillips
 
-## Getting Started
+This is my personal developer portfolio, built using **Next.js 15** and **Tailwind CSS v4**.  
+The site highlights my work, skills, resume, and blog posts with a clean, responsive, and animated layout.
 
-First, run the development server:
+🌐 **Live Site:** [https://c-phillips.dev](https://c-phillips.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tech Stack
+
+- [Next.js 15 (App Router)](https://nextjs.org/docs)
+- [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4)
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [TypeScript](https://www.typescriptlang.org/)
+- Design tokens via Tailwind v4 `@theme` and `@custom-variant`
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                  # Pages using the App Router
+│   ├── home/             # Landing page
+│   ├── blog/             # Blog list
+│   ├── projects/         # Filterable project cards
+│   ├── resume/           # Resume sections and download link
+│   └── layout.tsx        # Shared layout (navbar, footer, theming)
+├── components/           # Reusable components (cards, toggles, etc.)
+├── styles/               # Tailwind + theme variables (globals.css)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Design System
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tailwind CSS v4 allows design tokens and variants directly in CSS:
 
-## Learn More
+```css
+@custom-variant dark (&:where(.dark, .dark *));
 
-To learn more about Next.js, take a look at the following resources:
+@layer theme {
+  @theme {
+    --color-lighter: #f9fafb;
+    --color-hlighter: #d1d5db;
+    --color-darker: #1f2937;
+    --color-hdarker: #111827;
+    --color-primary: #2563eb;
+    --color-secondary: #10b981;
+    --color-accent: #b91c1c;
+  }
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Features
 
-## Deploy on Vercel
+- 🌙 Dark mode toggle
+- 🎯 Fully responsive layout
+- 📁 Filterable Projects by tech/category
+- 🧠 Blog with dev logs and updates
+- 📄 Resume with PDF download
+- 🎞️ Framer Motion page and section animations
+- 🛠 Clean layout using CSS variables and custom variants
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Scripts
+
+```bash
+npm install        # Install dependencies
+npm run dev        # Start local dev server
+npm run build      # Build for production
+```
+
+---
+
+## 📄 License
+
+MIT License — feel free to fork and adapt for your own use.
+
+---
+
+## 👤 Author
+
+**Carson Phillips**  
+📧 [cbpcbphillips@gmail.com](mailto:cbpcbphillips@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/cbpcbphillips/)  
+🐙 [GitHub](https://github.com/cbpcbphillips)
+
+---
+
+> Built with love, dark mode, and a desire to make clean, fast, useful websites.
