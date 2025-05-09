@@ -9,7 +9,8 @@ export default function BlogPage() {
       <section className="text-center space-y-4">
         <h1 className="text-4xl font-bold">My Blog</h1>
         <p className="text-lg max-w-2xl mx-auto">
-          Monthly updates, development logs, and lessons from my journey as a student and developer.
+          Monthly updates, development logs, and lessons from my journey as a
+          student and developer.
         </p>
       </section>
 

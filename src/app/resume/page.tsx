@@ -22,11 +22,12 @@ export default function ResumePage() {
       <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Professional Summary</h2>
         <p>
-          I&apos;m a student at Texas A&amp;M University pursuing a career in full stack
-          web development. I specialize in React, Node.js, and PostgreSQL, and
-          enjoy creating clean, scalable applications that solve real-world
-          problems. I thrive in collaborative environments, embrace continuous
-          learning, and aim to deliver meaningful and user-focused solutions.
+          I&apos;m a student at Texas A&amp;M University pursuing a career in
+          full stack web development. I specialize in React, Node.js, and
+          PostgreSQL, and enjoy creating clean, scalable applications that solve
+          real-world problems. I thrive in collaborative environments, embrace
+          continuous learning, and aim to deliver meaningful and user-focused
+          solutions.
         </p>
       </section>
 
@@ -138,7 +139,8 @@ export default function ResumePage() {
         </h2>
         <ul className="list-disc list-inside space-y-1">
           <li>
-            Stellar Student Award, Texas A&amp;M Transportation Institute (Q4 2025)
+            Stellar Student Award, Texas A&amp;M Transportation Institute (Q4
+            2025)
           </li>
           <li>
             Participant, Toyota Hackathon – Built vehicle quiz recommender app

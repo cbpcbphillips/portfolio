@@ -5,7 +5,9 @@ import ProjectCard from '@/components/ProjectCard'
 import { projects } from './projects'
 
 export default function ProjectsPage() {
-  const categories = Array.from(new Set(projects.flatMap((p) => p.tags ?? []))).sort()
+  const categories = Array.from(
+    new Set(projects.flatMap((p) => p.tags ?? []))
+  ).sort()
   const techs = Array.from(new Set(projects.flatMap((p) => p.stack))).sort()
 
   const categoryOptions = ['All', ...categories]
@@ -15,7 +17,8 @@ export default function ProjectsPage() {
   const [selectedTech, setSelectedTech] = useState('All')
 
   const filtered = projects.filter((p) => {
-    const byCategory = selectedCategory === 'All' || p.tags?.includes(selectedCategory)
+    const byCategory =
+      selectedCategory === 'All' || p.tags?.includes(selectedCategory)
     const byTech = selectedTech === 'All' || p.stack.includes(selectedTech)
     return byCategory && byTech
   })
@@ -31,7 +34,9 @@ export default function ProjectsPage() {
 
       <div className="flex flex-wrap gap-6 justify-center">
         <div>
-          <label htmlFor="category" className="block text-sm font-medium mb-1">Category</label>
+          <label htmlFor="category" className="block text-sm font-medium mb-1">
+            Category
+          </label>
           <select
             id="category"
             value={selectedCategory}
@@ -39,13 +44,17 @@ export default function ProjectsPage() {
             className="block w-40 rounded border px-3 py-2 bg-[var(--color-lighter)] dark:bg-[var(--color-darker)] border-[var(--color-darker)] dark:border-[var(--color-lighter)]"
           >
             {categoryOptions.map((cat) => (
-              <option key={cat} value={cat}>{cat}</option>
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
             ))}
           </select>
         </div>
 
         <div>
-          <label htmlFor="tech" className="block text-sm font-medium mb-1">Technology</label>
+          <label htmlFor="tech" className="block text-sm font-medium mb-1">
+            Technology
+          </label>
           <select
             id="tech"
             value={selectedTech}
@@ -53,7 +62,9 @@ export default function ProjectsPage() {
             className="block w-40 rounded border px-3 py-2 bg-[var(--color-lighter)] dark:bg-[var(--color-darker)] border-[var(--color-darker)] dark:border-[var(--color-lighter)]"
           >
             {techOptions.map((tech) => (
-              <option key={tech} value={tech}>{tech}</option>
+              <option key={tech} value={tech}>
+                {tech}
+              </option>
             ))}
           </select>
         </div>

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="978cadfe-39b5-47c2-961e-d4b56dddd96a" name="Changes" comment="" />
+    <list default="true" id="978cadfe-39b5-47c2-961e-d4b56dddd96a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/projects/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +30,12 @@
     &quot;assignee&quot;: &quot;Vet-cg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/cbpcbphillips/portfolio.git",
-    "accountId": "9cb9e9c9-0d62-4f45-945a-a9b13c208872"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/cbpcbphillips/portfolio.git&quot;,
+    &quot;accountId&quot;: &quot;9cb9e9c9-0d62-4f45-945a-a9b13c208872&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/app/layout.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -94,7 +97,8 @@
       <workItem from="1744587940240" duration="2159000" />
       <workItem from="1744760862502" duration="14642000" />
       <workItem from="1745271294285" duration="10484000" />
-      <workItem from="1746027071335" duration="6829000" />
+      <workItem from="1746027071335" duration="7495000" />
+      <workItem from="1746651222864" duration="1817000" />
     </task>
     <servers />
   </component>
