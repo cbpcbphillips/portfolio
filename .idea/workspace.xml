@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="978cadfe-39b5-47c2-961e-d4b56dddd96a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MotionWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DarkModeToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DarkModeToggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +97,7 @@
       <workItem from="1744760862502" duration="14642000" />
       <workItem from="1745271294285" duration="10484000" />
       <workItem from="1746027071335" duration="7495000" />
-      <workItem from="1746651222864" duration="4068000" />
+      <workItem from="1746651222864" duration="4458000" />
     </task>
     <servers />
   </component>

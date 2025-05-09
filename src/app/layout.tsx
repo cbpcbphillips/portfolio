@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import DarkModeToggle from '../components/DarkModeToggle'
 import ThemeProvider from '../components/ThemeProvider'
 
 export default function RootLayout({

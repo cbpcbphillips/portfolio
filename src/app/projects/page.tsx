@@ -7,7 +7,9 @@ import MotionWrapper from '@/components/MotionWrapper'
 import { motion } from 'framer-motion'
 
 export default function ProjectsPage() {
-  const categories = Array.from(new Set(projects.flatMap((p) => p.tags ?? []))).sort()
+  const categories = Array.from(
+    new Set(projects.flatMap((p) => p.tags ?? []))
+  ).sort()
   const techs = Array.from(new Set(projects.flatMap((p) => p.stack))).sort()
 
   const categoryOptions = ['All', ...categories]
@@ -17,14 +19,14 @@ export default function ProjectsPage() {
   const [selectedTech, setSelectedTech] = useState('All')
 
   const filtered = projects.filter((p) => {
-    const byCategory = selectedCategory === 'All' || p.tags?.includes(selectedCategory)
+    const byCategory =
+      selectedCategory === 'All' || p.tags?.includes(selectedCategory)
     const byTech = selectedTech === 'All' || p.stack.includes(selectedTech)
     return byCategory && byTech
   })
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-16 space-y-8">
-
       {/* Animated Header */}
       <MotionWrapper className="text-center space-y-2">
         <h1 className="text-4xl font-bold">Projects</h1>

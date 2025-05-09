@@ -6,7 +6,6 @@ import MotionWrapper from '@/components/MotionWrapper'
 export default function HomePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16 space-y-24 text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
-
       {/* Hero Section */}
       <MotionWrapper className="text-center space-y-4">
         <h1 className="text-4xl font-bold">Hey, I&apos;m Carson Phillips</h1>
