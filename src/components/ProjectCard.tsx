@@ -8,7 +8,6 @@ interface ProjectCardProps {
   github: string
   demo?: string
   tags?: string[]
-  image: string
 }
 
 export default function ProjectCard({
@@ -17,7 +16,6 @@ export default function ProjectCard({
   github,
   demo,
   tags,
-  image,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -26,11 +24,6 @@ export default function ProjectCard({
       className="border rounded-xl p-4 space-y-3 shadow-sm border-[var(--color-darker)] dark:border-[var(--color-lighter)]"
     >
       <div className="flex items-center gap-4">
-        <img
-          src={image}
-          alt="project thumbnail"
-          className="h-12 w-12 rounded-sm"
-        />
         <div>
           <h3 className="text-xl font-semibold">{title}</h3>
           <div className="flex flex-wrap gap-2 mt-1 text-xs text-[var(--color-primary)]">

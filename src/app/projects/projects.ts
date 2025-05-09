@@ -1,38 +1,24 @@
 export const projects = [
   {
-    title: 'Flashcard Quiz App',
-    slug: 'flashcard-quiz',
-    description:
-      'Study smarter with flashcard sets, quizzes, and user customization. Built with Firebase Auth, Firestore, and React Router.',
-    stack: ['React', 'Firebase', 'Tailwind'],
-    github: 'https://github.com/YOUR_USERNAME/flashcard-app',
-    demo: 'https://flashquiz.vercel.app',
-    tags: ['Full Stack', 'Firebase', 'Featured'],
-    featured: true,
-    image: 'globe.svg',
-  },
-  {
     title: 'Developer Portfolio',
     slug: 'portfolio',
     description:
       'This website! A portfolio site showcasing my work, resume, and dev journey — built using Next.js and Tailwind v4.',
     stack: ['Next.js', 'Tailwind CSS'],
-    github: 'https://github.com/YOUR_USERNAME/portfolio',
-    demo: 'https://carsonphillips.dev',
+    github: 'https://github.com/cbpcbphillips/portfolio',
+    demo: 'https://c-phillips.dev',
     tags: ['Frontend', 'Personal'],
     featured: true,
-    image: 'globe.svg',
   },
   {
-    title: 'LeetCode GitHub Tracker',
+    title: 'LeetCode Solution Repository',
     slug: 'leetcode-tracker',
     description:
-      'A public GitHub repo documenting C++ solutions to LeetCode problems, organized by topic and difficulty.',
+      'A public GitHub repo documenting C++ solutions to LeetCode problems, organized by topic.',
     stack: ['C++', 'Markdown', 'Git'],
-    github: 'https://github.com/YOUR_USERNAME/leetcode',
-    demo: '',
+    github: 'https://github.com/cbpcbphillips/Leetcode-Solutions',
+    demo: 'https://github.com/cbpcbphillips/Leetcode-Solutions',
     tags: ['Algorithm', 'Open Source'],
     featured: false,
-    image: 'globe.svg',
   },
 ]
