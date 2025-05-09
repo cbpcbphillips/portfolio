@@ -1,11 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import '../styles/globals.css'
-import { motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
   const navItems = [
     { name: 'Home', link: '/home' },
     { name: 'Resume', link: '/resume' },
@@ -14,28 +16,55 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="relative z-[999]">
-      <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="w-full max-w-5xl mx-auto mt-6 h-[3.25rem] flex justify-center rounded-full border border-[var(--color-darker)] bg-[var(--color-darker)] dark:bg-[var(--color-lighter)] dark:border-[var(--color-lighter)] sm:w-[35rem] shadow-md shadow-black/[0.03] backdrop-blur-md"
-      >
-        <nav className="flex items-center justify-center w-full">
-          <ul className="flex gap-6 px-4">
-            {navItems.map((item) => (
-              <li key={item.link} className="transition">
-                <Link
-                  href={item.link}
-                  className="flex items-center justify-center h-[2.75rem] w-[7.5rem] rounded-full border border-[var(--color-lighter)] dark:border-[var(--color-darker)] bg-[var(--color-lighter)] dark:bg-[var(--color-darker)] text-[var(--color-darker)] dark:text-[var(--color-lighter)] text-lg font-medium hover:text-[var(--color-hdarker)] dark:hover:text-[var(--color-hlighter)] transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-lighter)] dark:border-[var(--color-darker)] bg-[var(--color-darker)] dark:bg-[var(--color-lighter)] text-[var(--color-lighter)] dark:text-[var(--color-darker)] shadow-sm">
+      <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 sm:px-6">
+        {/* Left: Logo or name */}
+        <Link href="/home" className="text-xl font-semibold">
+          Carson Phillips
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.link}
+              href={item.link}
+              className="text-sm font-medium hover:underline"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <DarkModeToggle />
         </nav>
-      </motion.div>
+
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden border-t border-[var(--color-lighter)] dark:border-[var(--color-darker)] px-4 py-4 space-y-2 bg-[var(--color-darker)] dark:bg-[var(--color-lighter)]">
+          {navItems.map((item) => (
+            <Link
+              key={item.link}
+              href={item.link}
+              className="block text-sm font-medium hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="mt-4">
+            <DarkModeToggle />
+          </div>
+        </div>
+      )}
     </header>
   )
 }

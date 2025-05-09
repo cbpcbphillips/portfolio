@@ -17,13 +17,13 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white transition"
+      className="p-2 rounded-full hover:bg-[var(--color-hover)] transition-colors duration-200"
       aria-label="Toggle Dark Mode"
     >
       {theme === 'dark' ? (
-        <Sun className="w-5 h-5" />
+        <Sun className="w-5 h-5 text-yellow-400" />
       ) : (
-        <Moon className="w-5 h-5" />
+        <Moon className="w-5 h-5 text-blue-600" />
       )}
     </button>
   )

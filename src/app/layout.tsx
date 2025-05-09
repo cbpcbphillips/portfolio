@@ -17,7 +17,6 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <DarkModeToggle />
           <Navbar />
           {children}
           <Footer />

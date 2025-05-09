@@ -1,33 +1,24 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import MotionWrapper from '@/components/MotionWrapper'
 
 export default function HomePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16 space-y-24 text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
+
       {/* Hero Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center space-y-4"
-      >
+      <MotionWrapper className="text-center space-y-4">
         <h1 className="text-4xl font-bold">Hey, I&apos;m Carson Phillips</h1>
         <p className="text-lg max-w-xl mx-auto">
           A full stack developer focused on building performant, scalable, and
           meaningful web experiences using React, Node.js, and PostgreSQL.
         </p>
-      </motion.section>
+      </MotionWrapper>
 
       {/* About Me Section */}
       <hr className="border-t border-[var(--color-darker)] dark:border-[var(--color-lighter)] my-12" />
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-4"
-      >
+      <MotionWrapper className="space-y-4">
         <h2 className="text-2xl font-semibold">About Me</h2>
         <p>
           I&apos;m a student at Texas A&amp;M University working toward a career
@@ -43,16 +34,11 @@ export default function HomePage() {
           fast-learning developer who enjoys solving real-world problems with
           code, feel free to connect or check out my work.
         </p>
-      </motion.section>
+      </MotionWrapper>
 
       {/* Website Outline */}
       <hr className="border-t border-[var(--color-darker)] dark:border-[var(--color-lighter)] my-12" />
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-4"
-      >
+      <MotionWrapper className="space-y-4">
         <h2 className="text-2xl font-semibold">What&apos;s On This Site?</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>
@@ -72,7 +58,7 @@ export default function HomePage() {
             in the footer.
           </li>
         </ul>
-      </motion.section>
+      </MotionWrapper>
     </main>
   )
 }

@@ -1,14 +1,17 @@
 'use client'
+
 import SkillCard from '@/components/SkillCard'
 import ProjectItem from '@/components/ProjectItem'
-import React from 'react'
+import MotionWrapper from '@/components/MotionWrapper'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export default function ResumePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16 space-y-16 text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
+
       {/* Download Button */}
-      <div className="text-center">
+      <MotionWrapper className="text-center">
         <Link
           href="/resume.pdf"
           target="_blank"
@@ -16,151 +19,131 @@ export default function ResumePage() {
         >
           Download PDF Resume
         </Link>
-      </div>
+      </MotionWrapper>
 
       {/* Professional Summary */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Professional Summary</h2>
         <p>
-          I&apos;m a student at Texas A&amp;M University pursuing a career in
-          full stack web development. I specialize in React, Node.js, and
-          PostgreSQL, and enjoy creating clean, scalable applications that solve
-          real-world problems. I thrive in collaborative environments, embrace
-          continuous learning, and aim to deliver meaningful and user-focused
-          solutions.
+          I&apos;m a student at Texas A&amp;M University pursuing a career in full stack web development...
         </p>
-      </section>
+      </MotionWrapper>
 
       {/* Technical Skills */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Technical Skills</h2>
 
-        {/* Languages */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-medium">Languages</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <SkillCard iconUrl="cpp.svg" item="C++" />
-            <SkillCard iconUrl="python.svg" item="Python" />
-            <SkillCard iconUrl="java.svg" item="Java" />
-            <SkillCard iconUrl="javascript.svg" item="JavaScript" />
-            <SkillCard iconUrl="typescript.svg" item="TypeScript" />
+        {[
+          { label: 'Languages', items: ['C++', 'Python', 'Java', 'JavaScript', 'TypeScript'], icons: ['cpp.svg', 'python.svg', 'java.svg', 'javascript.svg', 'typescript.svg'] },
+          { label: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS'], icons: ['react.svg', 'nextjs.svg', 'tailwind.svg'] },
+          { label: 'Backend', items: ['Node.js', 'Firebase'], icons: ['nodejs.svg', 'firebase.svg'] },
+          { label: 'Databases', items: ['PostgreSQL'], icons: ['postgresql.svg'] },
+        ].map(({ label, items, icons }) => (
+          <div key={label} className="space-y-2">
+            <h3 className="text-lg font-medium">{label}</h3>
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm"
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: {},
+                show: {
+                  transition: { staggerChildren: 0.07 },
+                },
+              }}
+            >
+              {items.map((item, i) => (
+                <motion.div
+                  key={item}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <SkillCard item={item} iconUrl={icons[i]} />
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </div>
-
-        {/* Frontend */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-medium">Frontend</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <SkillCard iconUrl="react.svg" item="React" />
-            <SkillCard iconUrl="nextjs.svg" item="Next.js" />
-            <SkillCard iconUrl="tailwind.svg" item="Tailwind CSS" />
-          </div>
-        </div>
-
-        {/* Backend */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-medium">Backend</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <SkillCard iconUrl="nodejs.svg" item="Node.js" />
-            <SkillCard iconUrl="firebase.svg" item="Firebase" />
-          </div>
-        </div>
-
-        {/* Databases */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-medium">Databases</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <SkillCard iconUrl="postgresql.svg" item="PostgreSQL" />
-          </div>
-        </div>
-      </section>
+        ))}
+      </MotionWrapper>
 
       {/* Projects */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Projects</h2>
-        <ul className="space-y-4">
-          <ProjectItem
-            title="Developer Portfolio Website"
-            description="Built a personal portfolio with Next.js and Tailwind CSS to showcase skills and projects. Implemented routing, dark mode, and responsive design for a seamless user experience."
-            link="https://github.com/cbpcbphillips/portfolio"
-          />
-          <ProjectItem
-            title="LeetCode Solutions Repository"
-            description="Documented solutions to LeetCode problems using C++, organized by topic and optimized for readability. Includes explanations and solution patterns."
-            link="https://github.com/cbpcbphillips/Leetcode-Solutions"
-          />
-        </ul>
-      </section>
+        <motion.ul
+          className="space-y-4"
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          {[
+            {
+              title: 'Developer Portfolio Website',
+              description: 'Built a personal portfolio with Next.js and Tailwind CSS...',
+              link: 'https://github.com/cbpcbphillips/portfolio',
+            },
+            {
+              title: 'LeetCode Solutions Repository',
+              description: 'Documented solutions to LeetCode problems using C++...',
+              link: 'https://github.com/cbpcbphillips/Leetcode-Solutions',
+            },
+          ].map((project) => (
+            <motion.li
+              key={project.title}
+              variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.4 }}
+            >
+              <ProjectItem {...project} />
+            </motion.li>
+          ))}
+        </motion.ul>
+      </MotionWrapper>
 
       {/* Education */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Education</h2>
         <p>
-          <strong>Texas A&amp;M University</strong>
-          <br />
-          B.A. in Computing, Expected Graduation: May 2027
-          <br />
-          Relevant Coursework: Data Structures, Algorithms, Web Development,
-          Databases
+          <strong>Texas A&amp;M University</strong><br />
+          B.A. in Computing, Expected Graduation: May 2027<br />
+          Relevant Coursework: Data Structures, Algorithms, Web Development, Databases
         </p>
-      </section>
+      </MotionWrapper>
 
       {/* Experience */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
         <h2 className="text-2xl font-semibold">Experience</h2>
         <p>
-          <strong>Student Technician</strong> — Texas A&amp;M Transportation
-          Institute
-          <br />
+          <strong>Student Technician</strong> — Texas A&amp;M Transportation Institute<br />
           March 2024 – Present
         </p>
-        <p>
-          Provide technical support as part of the helpdesk team, assisting
-          users with hardware, software, and connectivity issues. Manage and
-          maintain institutional devices using Microsoft Intune and SCCM,
-          ensuring compliance and smooth operations. Supported audit preparation
-          by reconciling inventory and resolving sync issues.
-        </p>
         <ul className="list-disc list-inside space-y-1">
-          <li>
-            Supported audit readiness by reconciling SCCM and Intune data.
-          </li>
-          <li>
-            Managed device lifecycle tasks including enrollment, configuration,
-            and retirement.
-          </li>
+          <li>Supported audit readiness by reconciling SCCM and Intune data.</li>
+          <li>Managed device lifecycle tasks including enrollment, configuration, and retirement.</li>
         </ul>
-      </section>
+      </MotionWrapper>
 
       {/* Certifications & Achievements */}
-      <section className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
-        <h2 className="text-2xl font-semibold">
-          Certifications &amp; Achievements
-        </h2>
+      <MotionWrapper className="space-y-4 border-l-4 pl-4 border-[var(--color-primary)]">
+        <h2 className="text-2xl font-semibold">Certifications & Achievements</h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>
-            Stellar Student Award, Texas A&amp;M Transportation Institute (Q4
-            2025)
-          </li>
-          <li>
-            Participant, Toyota Hackathon – Built vehicle quiz recommender app
-          </li>
-          <li>
-            Active Member, Aggie Competitive Coding Club and Aggie Data Science
-            Club
-          </li>
+          <li>Stellar Student Award, Texas A&amp;M Transportation Institute (Q4 2025)</li>
+          <li>Participant, Toyota Hackathon – Built vehicle quiz recommender app</li>
+          <li>Active Member, Aggie Competitive Coding Club and Aggie Data Science Club</li>
         </ul>
-      </section>
+      </MotionWrapper>
 
       {/* Call to Action */}
-      <section className="text-center space-y-2">
+      <MotionWrapper className="text-center space-y-2">
         <h2 className="text-xl font-semibold">Let&apos;s Connect</h2>
         <p>
-          Interested in working together or want to learn more? Reach out
-          through the contact info in the footer or drop feedback through the
-          form.
+          Interested in working together or want to learn more? Reach out through the contact info in the footer or drop feedback through the form.
         </p>
-      </section>
+      </MotionWrapper>
     </main>
   )
 }

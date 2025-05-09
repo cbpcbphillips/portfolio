@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import { projects } from './projects'
+import MotionWrapper from '@/components/MotionWrapper'
+import { motion } from 'framer-motion'
 
 export default function ProjectsPage() {
-  const categories = Array.from(
-    new Set(projects.flatMap((p) => p.tags ?? []))
-  ).sort()
+  const categories = Array.from(new Set(projects.flatMap((p) => p.tags ?? []))).sort()
   const techs = Array.from(new Set(projects.flatMap((p) => p.stack))).sort()
 
   const categoryOptions = ['All', ...categories]
@@ -17,22 +17,24 @@ export default function ProjectsPage() {
   const [selectedTech, setSelectedTech] = useState('All')
 
   const filtered = projects.filter((p) => {
-    const byCategory =
-      selectedCategory === 'All' || p.tags?.includes(selectedCategory)
+    const byCategory = selectedCategory === 'All' || p.tags?.includes(selectedCategory)
     const byTech = selectedTech === 'All' || p.stack.includes(selectedTech)
     return byCategory && byTech
   })
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-16 space-y-8">
-      <section className="text-center space-y-2">
+
+      {/* Animated Header */}
+      <MotionWrapper className="text-center space-y-2">
         <h1 className="text-4xl font-bold">Projects</h1>
         <p className="text-lg text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
           Filter by category or technology to quickly find projects.
         </p>
-      </section>
+      </MotionWrapper>
 
-      <div className="flex flex-wrap gap-6 justify-center">
+      {/* Animated Filter Controls */}
+      <MotionWrapper className="flex flex-wrap gap-6 justify-center">
         <div>
           <label htmlFor="category" className="block text-sm font-medium mb-1">
             Category
@@ -68,18 +70,42 @@ export default function ProjectsPage() {
             ))}
           </select>
         </div>
-      </div>
+      </MotionWrapper>
 
-      <section className="grid gap-6 sm:grid-cols-2">
+      {/* Animated Projects Grid */}
+      <motion.section
+        className="grid gap-6 sm:grid-cols-2"
+        initial="hidden"
+        animate="show"
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.1 } },
+        }}
+      >
         {filtered.map((project) => (
-          <ProjectCard key={project.slug} {...project} />
+          <motion.div
+            key={project.slug}
+            variants={{
+              hidden: { opacity: 0, y: 15 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.4 }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
         ))}
+
         {filtered.length === 0 && (
-          <p className="col-span-full text-center text-sm text-[var(--color-darker)] dark:text-[var(--color-lighter)]">
+          <motion.p
+            className="col-span-full text-center text-sm text-[var(--color-darker)] dark:text-[var(--color-lighter)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             No projects match those filters.
-          </p>
+          </motion.p>
         )}
-      </section>
+      </motion.section>
     </main>
   )
 }
